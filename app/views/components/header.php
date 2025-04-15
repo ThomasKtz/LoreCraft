@@ -7,12 +7,11 @@
 </head>
 <body>
 
-<?php 
-// Debug session en haut de chaque page
-echo "<pre>";
-var_dump($_SESSION);
-echo "</pre>";
-if(isset($_SESSION['user']) && $_SESSION['user']['role'] == 3) {
-    echo '<a href="index.php?page=admin">Dashboard Admin</a>';
-}
-?>
+<header>
+    <nav>
+        <ul>
+            <li><a href="index.php?page=home">Home</a></li>
+            <li><a href="index.php?page=dashboard">Dashboard</a></li>
+        </ul>
+    </nav>
+</header>
