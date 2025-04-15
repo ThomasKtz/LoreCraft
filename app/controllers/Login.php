@@ -25,8 +25,9 @@ class Login {
                     'email' => $user['user_email'],
                     'role' => $user['id_role']
                 ];
-                header("Location: index.php?page=home"); // ou autre
+                header("Location: index.php?page=dashboard");
                 exit;
+
             } else {
                 $error = "Email ou mot de passe incorrect";
                 require('app/views/login.php');

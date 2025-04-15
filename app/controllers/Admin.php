@@ -1,5 +1,6 @@
 <?php
 require_once 'app/models/User.php';
+require_once 'app/models/Campaign.php';
 
 class Admin {
     private $db;
@@ -15,10 +16,18 @@ class Admin {
         }
     
         $userModel = new User($this->db);
+        $campaignModel = new Campaign($this->db);
     
-        // Suppression
+        // Suppression d'un utilisateur
         if (isset($_GET['delete'])) {
             $userModel->deleteUser($_GET['delete']);
+            header("Location: index.php?page=admin");
+            exit;
+        }
+        
+        // Suppression d'une campagne
+        if (isset($_GET['delete_campaign'])) {
+            $campaignModel->deleteCampaign($_GET['delete_campaign']);
             header("Location: index.php?page=admin");
             exit;
         }
@@ -37,7 +46,9 @@ class Admin {
         // Récupérer tous les rôles
         $roles = $userModel->getAllRoles();
         $users = $userModel->getAllUsers();
+        $campaigns = $campaignModel->getAllCampaigns();
         require 'app/views/adminDashboard.php';
     }
     
 }
+

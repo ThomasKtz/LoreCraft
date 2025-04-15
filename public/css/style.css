@@ -29,3 +29,58 @@
     padding: 10px;
     margin-bottom: 1rem;
 }
+
+/* DASHBOARD */
+
+.dashboard-container {
+    text-align: center;
+    margin-top: 50px;
+}
+
+.cards-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #f1f1f1;
+    width: 250px;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.card h2 {
+    margin-bottom: 15px;
+    color: #333;
+}
+
+.card p {
+    margin-bottom: 20px;
+    color: #666;
+}
+
+.card a {
+    display: inline-block;
+    background-color: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-bottom: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.card a:hover {
+    background-color: #45a049;
+}

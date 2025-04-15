@@ -19,6 +19,11 @@ require_once 'app/controllers/SignUp.php';
 require_once 'app/controllers/Login.php';
 require_once 'app/controllers/Home.php';
 require_once 'app/controllers/Admin.php';
+require_once 'app/controllers/Dashboard.php';
+require_once 'app/controllers/campaign/CreateCampaign.php';
+require_once 'app/controllers/campaign/ListCampaigns.php';
+require_once 'app/controllers/campaign/ViewCampaign.php';
+require_once 'app/controllers/article/CreateArticle.php';
 // Ajoute ici les autres contrôleurs (Characters, Campaigns, etc.)
 
 // Routeur
@@ -28,8 +33,12 @@ $routes = [
     "signUp"        => SignUp::class,
     "login"         => Login::class,
     "home"          => Home::class,
-    "admin"         => Admin::class
-
+    "admin"         => Admin::class,
+    "dashboard"     => Dashboard::class,
+    "create_campaign" => CreateCampaign::class,
+    "listCampaigns" => ListCampaigns::class,
+    "campaign"      => ViewCampaign::class,
+    "add_article"  => CreateArticle::class
 ];
 
 $page = filter_input(INPUT_GET, "page") ?? "home";

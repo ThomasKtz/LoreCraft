@@ -35,4 +35,30 @@
     <?php endforeach; ?>
 </table>
 
+<hr>
+<h1>Liste des campagnes</h1>
+
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Description</th>
+        <th>Ma tre du jeu</th>
+        <th>Actions</th>
+    </tr>
+    <?php foreach ($campaigns as $campaign): ?>
+    <tr>
+        <td><?= $campaign['campaign_id'] ?></td>
+        <td><?= htmlspecialchars($campaign['campaign_name']) ?></td>
+        <td><?= nl2br(htmlspecialchars($campaign['campaign_description'])) ?></td>
+        <td><?= htmlspecialchars($campaign['gm_name'] ?? 'N/A') ?></td>
+        <td>
+            <a href="index.php?page=campaign&id=<?= $campaign['campaign_id'] ?>">Voir</a>
+            <a href="index.php?page=edit_campaign&id=<?= $campaign['campaign_id'] ?>">Modifier</a>
+            <a href="index.php?page=admin&delete_campaign=<?= $campaign['campaign_id'] ?>" onclick="return confirm('Supprimer cette campagne ?')">Supprimer</a>
+        </td>
+    </tr>
+    <?php endforeach; ?>
+</table>
+
 <?php require_once __DIR__ . '/components/footer.php'; ?>
