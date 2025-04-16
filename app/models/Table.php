@@ -39,15 +39,15 @@ class Table {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function getAllCharactersFromCampaign($campaignId) {
+    public function getCharactersByTableId($tableId) {
         $stmt = $this->db->prepare("SELECT c.*, u.user_pseudo FROM characters c 
             LEFT JOIN characters_game_tables cgt ON c.character_id = cgt.id_character
-            LEFT JOIN game_tables gt ON cgt.id_game_table = gt.game_table_id
             LEFT JOIN users u ON c.id_user = u.user_id
-            WHERE gt.id_campaign = ?");
-        $stmt->execute([$campaignId]);
+            WHERE cgt.id_game_table = ?");
+        $stmt->execute([$tableId]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
+    
 
     public function getAllTablesByCampaignId($campaignId) {
         $stmt = $this->db->prepare("SELECT * FROM game_tables WHERE id_campaign = ?");

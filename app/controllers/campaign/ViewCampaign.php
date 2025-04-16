@@ -20,7 +20,7 @@ class ViewCampaign {
         $tables = $tableModel->getAllTablesByCampaignId($campaign['campaign_id']);
         $characters = array();
         foreach ($tables as $table) {
-            $characters[$table['game_table_id']] = $tableModel->getAllCharactersFromCampaign($table['game_table_id']) ?? array();
+            $characters[$table['game_table_id']] = $tableModel->getCharactersByTableId($table['game_table_id']) ?? array();
         }
 
 
