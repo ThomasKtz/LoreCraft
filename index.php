@@ -26,6 +26,9 @@ require_once 'app/controllers/campaign/ViewCampaign.php';
 require_once 'app/controllers/article/CreateArticle.php';
 require_once 'app/controllers/character/CreateCharacter.php';
 require_once 'app/controllers/character/ListCharacters.php';
+require_once 'app/controllers/table/CreateTable.php';
+require_once 'app/controllers/table/EditTable.php';
+require_once 'app/controllers/table/DeleteTable.php';
 // Ajoute ici les autres contrôleurs (Characters, Campaigns, etc.)
 
 // Routeur
@@ -42,7 +45,10 @@ $routes = [
     "campaign"      => ViewCampaign::class,
     "add_article"  => CreateArticle::class,
     "create_character" => CreateCharacter::class,
-    "myCharacters" => ListCharacters::class
+    "myCharacters" => ListCharacters::class,
+    "create_table" => CreateTable::class,
+    "edit_table" => EditTable::class,
+    "delete_table" => DeleteTable::class  
 ];
 
 $page = filter_input(INPUT_GET, "page") ?? "home";
