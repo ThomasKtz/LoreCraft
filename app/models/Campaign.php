@@ -42,4 +42,5 @@ class Campaign {
         $stmt = $this->db->prepare("DELETE FROM campaigns WHERE campaign_id = ?");
         return $stmt->execute([$id]);
     }
+    
 }
