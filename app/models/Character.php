@@ -27,5 +27,30 @@ class Character {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
+    // public function getAllCharactersByCampaignId($campaignId) {
+    //     $stmt = $this->db->prepare("
+    //         SELECT c.*, u.user_pseudo
+    //         FROM characters c
+    //         JOIN characters_game_tables cgt ON c.character_id = cgt.id_character
+    //         JOIN game_tables gt ON gt.game_table_id = cgt.id_game_table
+    //         JOIN users u ON c.id_user = u.user_id
+    //         WHERE gt.id_campaign = ?
+    //         GROUP BY c.character_id
+    //     ");
+    //     $stmt->execute([$campaignId]);
+    //     return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    // }
+
+    public function getCharactersByCampaignId($campaignId) {
+        $stmt = $this->db->prepare("
+            SELECT c.* FROM characters c
+            JOIN characters_game_tables cgt ON c.character_id = cgt.id_character
+            JOIN game_tables gt ON cgt.id_game_table = gt.game_table_id
+            WHERE gt.id_campaign = ?
+            GROUP BY c.character_id
+        ");
+        $stmt->execute([$campaignId]);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
     
 }

@@ -1,6 +1,6 @@
 <?php include 'app/views/components/header.php'; ?>
 
-<div class="container">
+<div class="create-form-container">
     <h2>Créer un article pour <?= htmlspecialchars($campaign['campaign_name']) ?></h2>
 
     <?php if (isset($error)): ?>

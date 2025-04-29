@@ -29,6 +29,8 @@ require_once 'app/controllers/character/ListCharacters.php';
 require_once 'app/controllers/table/CreateTable.php';
 require_once 'app/controllers/table/EditTable.php';
 require_once 'app/controllers/table/DeleteTable.php';
+require_once 'app/controllers/article/EditArticle.php';
+require_once 'app/controllers/article/DeleteArticle.php';
 // Ajoute ici les autres contrôleurs (Characters, Campaigns, etc.)
 
 // Routeur
@@ -44,6 +46,8 @@ $routes = [
     "listCampaigns" => ListCampaigns::class,
     "campaign"      => ViewCampaign::class,
     "add_article"  => CreateArticle::class,
+    "edit_article" => EditArticle::class,
+    "delete_article" => DeleteArticle::class,
     "create_character" => CreateCharacter::class,
     "myCharacters" => ListCharacters::class,
     "create_table" => CreateTable::class,

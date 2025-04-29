@@ -9,9 +9,13 @@
 
 <header>
     <nav>
+        <img class="logo" src="public/assets/logo.png" alt="logo">
+        <?php if (isset($_SESSION['user'])): ?>
         <ul>
-            <li><a href="index.php?page=home">Home</a></li>
-            <li><a href="index.php?page=dashboard">Dashboard</a></li>
+            <li><a href="index.php?page=home">Accueil</a></li>
+            <li><a href="index.php?page=dashboard">Tableau de bord</a></li>
         </ul>
+        <?php endif; ?>
     </nav>
 </header>
+

@@ -33,7 +33,7 @@ class Login {
                 require('app/views/login.php');
             }
         } else {
-            require('app/views/login.php');
+            require('app/views/home.php');
         }
     }
 }

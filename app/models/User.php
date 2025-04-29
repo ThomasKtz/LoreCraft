@@ -61,13 +61,5 @@ class User {
     public function getAllRoles() {
         $stmt = $this->db->query("SELECT role_id, role_name FROM roles");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-
-    public function getGameMasters() {
-        $stmt = $this->db->prepare("SELECT user_id, user_pseudo FROM users WHERE id_role = 2");
-        $stmt->execute();
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-    
-    
+    }    
 }

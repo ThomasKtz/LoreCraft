@@ -34,6 +34,6 @@ class SignUp {
             }
         }
 
-        require 'app/views/register.php';
+        require 'app/views/home.php';
     }
 }

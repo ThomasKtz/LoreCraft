@@ -1,6 +1,6 @@
 <?php include 'app/views/components/header.php'; ?>
 
-<div class="container">
+<div class="create-form-container">
     <h2>Créer un personnage</h2>
 
     <?php if (isset($error)): ?>
@@ -20,14 +20,22 @@
             <option value="2">Femme</option>
         </select><br><br>
 
-        <label for="character_age">Age:</label><br>
-        <input type="number" id="character_age" name="character_age" required><br><br>
+        <div class="create-form-row">
+    <div class="create-form-group">
+        <label for="character_age">Âge :</label>
+        <input type="number" id="character_age" name="character_age" required>
+    </div>
 
+    <div class="create-form-group">
         <label for="character_height">Taille (cm) :</label>
-        <input type="number" id="character_height" name="character_height" required><br><br>
+        <input type="number" id="character_height" name="character_height" required>
+    </div>
 
+    <div class="create-form-group">
         <label for="character_weight">Poids (kg) :</label>
-        <input type="number" id="character_weight" name="character_weight" required><br><br>
+        <input type="number" id="character_weight" name="character_weight" required>
+    </div>
+</div>
 
         <label for="character_race">Race :</label><br>
         <select name="character_race" id="character_race" required>

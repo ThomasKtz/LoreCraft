@@ -1,13 +1,13 @@
-<form method="post">
+<form method="post" class="table-edit-form">
     <input type="hidden" name="table_id" value="<?= $table['game_table_id'] ?>">
 
     <label for="game_table_name">Nom de la table:</label>
     <input type="text" id="game_table_name" name="game_table_name" value="<?= $table['game_table_name'] ?>" required>
 
-    <div style="display: flex; gap: 20px; align-items: center;">
+    <div class="character-selection-wrapper">
         <div>
-            <div><label for="availableCharacters">Personnages disponibles</label></div>
-            <select id="availableCharacters" multiple size="10" style="min-width: 200px;">
+            <label for="availableCharacters">Personnages disponibles</label>
+            <select id="availableCharacters" multiple size="10">
                 <?php foreach ($unregisteredCharacters as $character): ?>
                     <option value="<?= $character['character_id'] ?>">
                         <?= htmlspecialchars($character['character_firstname'] . ' ' . $character['character_lastname']) ?>
@@ -16,15 +16,14 @@
             </select>
         </div>
 
-        <!-- Boutons de transfert -->
-        <div style="display: flex; flex-direction: column; gap: 10px;">
-            <button type="button" onclick="moveSelected('availableCharacters', 'registeredCharacters')">→</button>
-            <button type="button" onclick="moveSelected('registeredCharacters', 'availableCharacters')">←</button>
+        <div class="transfer-buttons">
+            <button type="button" onclick="moveSelected('availableCharacters', 'registeredCharacters')">Ajouter</button>
+            <button type="button" onclick="moveSelected('registeredCharacters', 'availableCharacters')">Retirer</button>
         </div>
 
         <div>
-            <Div><label for="registeredCharacters">Personnages enregistrés</label></Div>
-            <select id="registeredCharacters" name="characters[]" multiple size="10" style="min-width: 200px;">
+            <label for="registeredCharacters">Personnages enregistrés</label>
+            <select id="registeredCharacters" name="characters[]" multiple size="10">
                 <?php foreach ($registeredCharacters as $character): ?>
                     <option value="<?= $character['character_id'] ?>">
                         <?= htmlspecialchars($character['character_firstname'] . ' ' . $character['character_lastname']) ?>
@@ -33,10 +32,9 @@
             </select>
         </div>
     </div>
-    <br>
+
     <button type="submit">Enregistrer les modifications</button>
 </form>
-
 
 
 <script>
@@ -63,4 +61,3 @@ function moveSelected(fromId, toId) {
     });
 }
 </script>
-

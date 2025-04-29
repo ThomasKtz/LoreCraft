@@ -25,12 +25,12 @@ class Campaign {
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function updateCampaign($id, $name, $description, $gm_id) {
-        $stmt = $this->db->prepare("UPDATE campaigns 
-                                    SET campaign_name = ?, campaign_description = ?, id_game_master = ?
-                                    WHERE campaign_id = ?");
-        return $stmt->execute([$name, $description, $gm_id, $id]);
-    }
+    // public function updateCampaign($id, $name, $description, $gm_id) {
+    //     $stmt = $this->db->prepare("UPDATE campaigns 
+    //                                 SET campaign_name = ?, campaign_description = ?, id_game_master = ?
+    //                                 WHERE campaign_id = ?");
+    //     return $stmt->execute([$name, $description, $gm_id, $id]);
+    // }
 
     public function getCampaignById($id) {
         $stmt = $this->db->prepare("SELECT * FROM campaigns LEFT JOIN users ON campaigns.id_game_master = users.user_id WHERE campaign_id = ?");

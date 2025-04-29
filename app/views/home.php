@@ -1,14 +1,18 @@
 <?php require_once __DIR__ . '/components/header.php'; ?>
 
 <div class="home-container">
-    <div class="left">
-        <h1>Bienvenue sur LoreCraft</h1>
-        <p>
-            LoreCraft est une plateforme de gestion narrative pour vos campagnes de jeux de rôle.
-            Créez votre personnage, racontez son histoire à travers des backgrounds interactifs,
-            échangez avec les autres joueurs et gérez votre univers avec le maître du jeu.
-        </p>
-    </div>
+<div class="left">
+    <h1>Entrez dans l’univers de LoreCraft</h1>
+    <p>
+        Plongez au cœur d’un monde où chaque campagne devient une légende.<br><br>
+        LoreCraft est votre grimoire numérique : créez des personnages vivants, tissez des histoires inoubliables, et partagez vos récits épiques dans un espace conçu pour les maîtres du jeu comme pour les aventuriers.
+        <br><br>
+        ✒️ Générez des backgrounds dynamiques,<br>
+        🧙‍♂️ Gérez vos parties en toute fluidité,<br>
+        📜 Et donnez vie à votre univers !
+    </p>
+</div>
+
 
     <div class="right">
         <!-- Bascule entre formulaire d'inscription et de connexion -->
