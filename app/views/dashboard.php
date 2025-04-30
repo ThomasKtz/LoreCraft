@@ -22,7 +22,7 @@
         <!-- Card Outils -->
         <div class="card">
             <h2>Outils</h2>
-            <a href="index.php?page=tools">Accéder aux outils</a>
+            <a href="index.php?page=roll-dice">Dés virtuels</a>
         </div>
     </div>
 </div>

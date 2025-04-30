@@ -31,9 +31,9 @@ require_once 'app/controllers/table/EditTable.php';
 require_once 'app/controllers/table/DeleteTable.php';
 require_once 'app/controllers/article/EditArticle.php';
 require_once 'app/controllers/article/DeleteArticle.php';
-// Ajoute ici les autres contrôleurs (Characters, Campaigns, etc.)
+require_once 'app/controllers/tools/RollDice.php';
 
-// Routeur
+
 $page = filter_input(INPUT_GET, "page");
 
 $routes = [
@@ -52,7 +52,8 @@ $routes = [
     "myCharacters" => ListCharacters::class,
     "create_table" => CreateTable::class,
     "edit_table" => EditTable::class,
-    "delete_table" => DeleteTable::class  
+    "delete_table" => DeleteTable::class,  
+    "roll-dice" => RollDice::class
 ];
 
 $page = filter_input(INPUT_GET, "page") ?? "home";
