@@ -917,6 +917,156 @@ nav ul li a:hover {
     }
 }
 
+/* VIEW CHARACTER */
+
+.character-container {
+    max-width: 1100px;
+    margin: 2rem auto;
+    padding: 0 5%;
+    color: var(--dun);
+}
+
+.character-header {
+    background-color: var(--eerie-black);
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.character-header h1 {
+    font-size: 2.5rem;
+    color: var(--gold-metallic);
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.character-info {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: space-around;
+    background-color: var(--eerie-black);
+    padding: 1.5rem;
+    border-radius: 10px;
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+.character-info div {
+    flex: 1 1 200px;
+    color: var(--dun);
+    font-size: 1.1rem;
+}
+
+.section-divider {
+    border: none;
+    border-top: 2px solid var(--gold-metallic);
+    margin: 3rem 0;
+}
+
+.backgrounds-section {
+    text-align: center;
+}
+
+.backgrounds-section h2 {
+    color: var(--gold-metallic);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+}
+
+.add-background-btn {
+    background-color: transparent;
+    color: var(--gold-metallic);
+    border: 1px solid var(--gold-metallic);
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    border-radius: 8px;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    transition: background-color 0.2s ease;
+}
+
+.add-background-btn:hover {
+    background-color: rgba(255, 215, 0, 0.1);
+}
+
+.background-card {
+    background-color: var(--eerie-black);
+    border: 1px solid rgba(255, 215, 0, 0.1);
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.background-card:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 12px rgba(255, 215, 0, 0.1);
+}
+
+.background-card h3 {
+    color: var(--keppel);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+}
+
+.background-actions a {
+    color: var(--gold-metallic);
+    margin-right: 1rem;
+    text-decoration: none;
+    font-size: 0.95rem;
+}
+
+@media screen and (max-width: 768px) {
+    .character-container {
+        padding: 0 1rem;
+    }
+
+    .character-header {
+        padding: 1.5rem;
+        text-align: center;
+    }
+
+    .character-info h2 {
+        font-size: 1.8rem;
+    }
+
+    .character-info p {
+        font-size: 1rem;
+        margin: 0.3rem 0;
+    }
+
+    .backgrounds-header {
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .add-background-btn {
+        font-size: 0.95rem;
+        padding: 0.4rem 0.8rem;
+    }
+
+    .background-card {
+        padding: 1rem;
+    }
+
+    .background-card h4 {
+        font-size: 1.2rem;
+    }
+
+    .background-card p {
+        font-size: 0.95rem;
+    }
+
+    .edit-btn {
+        font-size: 0.9rem;
+        padding: 0.3rem 0.6rem;
+    }
+}
+
 /* TOOLS */
 
 .dice-form-container {
