@@ -19,14 +19,6 @@
         <h2>Backgrounds</h2>
         <a href="index.php?page=add_background&id_character=<?= $character['character_id'] ?>" class="add-background-btn">+ Ajouter un background</a>
 
-        <?php foreach ($backgrounds as $bg): ?>
-        <div class="background-card">
-            <h3><?= htmlspecialchars($bg['title']) ?></h3>
-            <p><?= nl2br(htmlspecialchars($bg['content'])) ?></p>
-            <div class="background-actions">
-            <a href="index.php?page=edit_background&id=<?= $bg['id'] ?>" class="edit-btn">Modifier</a>
-            </div>
-        </div>
-        <?php endforeach; ?>
+        
     </div>
     </div>

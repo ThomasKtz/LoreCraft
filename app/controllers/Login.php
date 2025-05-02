@@ -1,6 +1,7 @@
 <?php
 
 require_once('app/models/User.php');
+require_once 'app/models/ActivityLogger.php';
 
 class Login {
     private $db;
@@ -25,6 +26,9 @@ class Login {
                     'email' => $user['user_email'],
                     'role' => $user['id_role']
                 ];
+
+                $logger = new ActivityLogger();
+                $logger->log('login', $_SESSION['user']['id']);
                 header("Location: index.php?page=dashboard");
                 exit;
 

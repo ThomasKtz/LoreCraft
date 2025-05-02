@@ -1,0 +1,18 @@
+{
+    "name": "thoma/lore-craft",
+    "description": "LoreCraft est une application de gestion narrative d'une campagne de jeu de role",
+    "autoload": {
+        "psr-4": {
+            "Thoma\\LoreCraft\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Thomas Krantz",
+            "email": "thomas.krantz.90@gmail.com"
+        }
+    ],
+    "require": {
+        "mongodb/mongodb": "^2.0"
+    }
+}

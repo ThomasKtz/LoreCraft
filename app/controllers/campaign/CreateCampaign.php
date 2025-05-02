@@ -1,6 +1,7 @@
 <?php
 
 require_once 'app/models/Campaign.php';
+require_once 'app/models/ActivityLogger.php';
 
 class CreateCampaign {
     private $db;
@@ -23,6 +24,10 @@ class CreateCampaign {
             if (!empty($name)) {
                 $campaignModel = new Campaign($this->db);
                 $success = $campaignModel->create($name, $description, $_SESSION['user']['id']);
+                $logger = new ActivityLogger();
+                $logger->log('create_campaign', $_SESSION['user']['id'], [
+                'campaign_name' => $name
+                ]);
 
                 if ($success) {
                     header("Location: index.php?page=dashboard");
