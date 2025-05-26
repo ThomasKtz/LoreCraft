@@ -33,6 +33,7 @@ require_once 'app/controllers/article/EditArticle.php';
 require_once 'app/controllers/article/DeleteArticle.php';
 require_once 'app/controllers/tools/RollDice.php';
 require_once 'app/controllers/character/ViewCharacter.php';
+require_once 'app/controllers/Logout.php';
 
 
 $page = filter_input(INPUT_GET, "page");
@@ -55,7 +56,8 @@ $routes = [
     "edit_table" => EditTable::class,
     "delete_table" => DeleteTable::class,  
     "roll-dice" => RollDice::class,
-    "character" => ViewCharacter::class
+    "character" => ViewCharacter::class,
+    "logout" => Logout::class
 ];
 
 $page = filter_input(INPUT_GET, "page") ?? "home";

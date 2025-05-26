@@ -18,9 +18,16 @@
         <!-- Bascule entre formulaire d'inscription et de connexion -->
         <div id="form-inscription" class="auth-form">
             <h2>Inscription</h2>
+            <?php if (!empty($error)): ?>
+                <div class="error-message" >
+                    <?= htmlspecialchars($error) ?>
+                </div>
+            <?php endif; ?>
             <form method="post" action="index.php?page=signUp">
-                <input type="text" name="pseudo" placeholder="Nom d'utilisateur" required>
-                <input type="email" name="email" placeholder="Email" required>
+                <input type="text" name="pseudo" placeholder="Nom d'utilisateur" required 
+                value="<?= isset($_POST['pseudo']) ? htmlspecialchars($_POST['pseudo']) : '' ?>">
+                <input type="email" name="email" placeholder="Email" required
+                value="<?= isset($_POST['email']) ? htmlspecialchars($_POST['email']) : '' ?>">
                 <input type="password" name="password" placeholder="Mot de passe" required>
                 <input type="password" name="confirm_password" placeholder=" Confirmation Mot de passe" required>
                 <button type="submit">S'inscrire</button>

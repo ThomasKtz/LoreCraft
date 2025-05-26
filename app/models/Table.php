@@ -74,16 +74,13 @@ class Table {
         try {
             $this->db->beginTransaction();
     
-            // Mise à jour du nom de la table
             $stmt = $this->db->prepare("UPDATE game_tables SET game_table_name = ? WHERE game_table_id = ?");
             $stmt->execute([$name, $tableId]);
     
-            // Suppression des anciens liens
             $stmt = $this->db->prepare("DELETE FROM characters_game_tables WHERE id_game_table = ?");
             $stmt->execute([$tableId]);
     
     
-            // Insertion des nouveaux liens
             if (!empty($characterIds)) {
                 $stmtLink = $this->db->prepare("INSERT INTO characters_game_tables (id_game_table, id_character) VALUES (?, ?)");
                 foreach ($characterIds as $charId) {
@@ -97,7 +94,7 @@ class Table {
         } catch (PDOException $e) {
             $this->db->rollBack();
             echo "Erreur SQL dans update(): " . $e->getMessage();
-            return false; // évite de relancer une exception, retourne juste false pour test
+            return false;
         }
     }
 

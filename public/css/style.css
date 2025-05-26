@@ -211,6 +211,15 @@ nav ul li a:hover {
     font-size: 0.9rem;
 }
 
+.error-message {
+    background-color: #ffe0e0;
+    color: #900;
+    padding: 10px;
+    border: 1px solid #cc0000;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
 @media screen and (max-width: 900px) {
     .home-container {
         flex-direction: column;
