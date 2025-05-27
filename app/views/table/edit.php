@@ -41,7 +41,6 @@
 document.querySelector("form").addEventListener("submit", function () {
     const registered = document.getElementById("registeredCharacters");
 
-    // Forcer toutes les options à être sélectionnées avant l'envoi
     for (let option of registered.options) {
         option.selected = true;
     }

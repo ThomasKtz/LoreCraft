@@ -15,7 +15,6 @@
 
 
     <div class="right">
-        <!-- Bascule entre formulaire d'inscription et de connexion -->
         <div id="form-inscription" class="auth-form">
             <h2>Inscription</h2>
             <?php if (!empty($error)): ?>

@@ -32,7 +32,6 @@ class CreateTable {
             }
         }
 
-        // Récupérer les personnages de l'utilisateur pour le formulaire
         $characters = $tableModel->getAllCharacters();
 
         include 'app/views/table/create.php';

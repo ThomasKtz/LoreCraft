@@ -11,13 +11,11 @@ class Table {
         try {
             $this->db->beginTransaction();
 
-            // Insère la table
             $stmt = $this->db->prepare("INSERT INTO game_tables (game_table_name, id_campaign) VALUES (?, ?)");
             $stmt->execute([$name, $campaignId]);
 
             $tableId = $this->db->lastInsertId();
 
-            // Si des personnages sont fournis, les ajouter à la table
             if (!empty($characterIds)) {
                 $stmtLink = $this->db->prepare("INSERT INTO characters_game_tables (id_game_table, id_character) VALUES (?, ?)");
                 foreach ($characterIds as $charId) {
@@ -102,11 +100,9 @@ class Table {
         try {
             $this->db->beginTransaction();
 
-            // Suppression des liens table/personnage
             $stmtLink = $this->db->prepare("DELETE FROM characters_game_tables WHERE id_game_table = ?");
             $stmtLink->execute([$tableId]);
 
-            // Suppression de la table
             $stmt = $this->db->prepare("DELETE FROM game_tables WHERE game_table_id = ?");
             $stmt->execute([$tableId]);
 
@@ -116,7 +112,7 @@ class Table {
         } catch (PDOException $e) {
             $this->db->rollBack();
             echo "Erreur SQL dans deleteTableById(): " . $e->getMessage();
-            return false; // évite de relancer une exception, retourne juste false pour test
+            return false;
         }
         
     }

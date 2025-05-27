@@ -1,5 +1,4 @@
 <div class="campaign-container">
-    <!-- Description de la campagne -->
     <section class="campaign-header">
         <h1><?= htmlspecialchars($campaign['campaign_name']) ?></h1>
         <p><?= nl2br(htmlspecialchars($campaign['campaign_description'])) ?></p>
@@ -15,7 +14,6 @@
 
     <hr class="section-divider">
 
-    <!-- Tables de jeu -->
     <section class="tables-section">
         <h2>Tables de la campagne</h2>
         <?php foreach ($tables as $table): ?>
@@ -44,7 +42,6 @@
 
     <hr class="section-divider">
 
-    <!-- Articles -->
     <section class="articles-section">
         <h2>Articles de la campagne</h2>
         <?php foreach ($articles as $article): ?>

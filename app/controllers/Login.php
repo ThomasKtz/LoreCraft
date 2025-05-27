@@ -19,7 +19,6 @@ class Login {
             $user = $userModel->getUserByEmail($email);
 
             if ($user && password_verify($password, $user['user_password'])) {
-                // Authentification réussie
                 $_SESSION['user'] = [
                     'id' => $user['user_id'],
                     'pseudo' => $user['user_pseudo'],

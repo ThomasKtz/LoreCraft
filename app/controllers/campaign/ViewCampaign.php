@@ -22,13 +22,12 @@ class ViewCampaign {
         $tables = $tableModel->getAllTablesByCampaignId($campaign['campaign_id']);
     
         $characters = [];
-        $userCharacterIds = []; // Pour stocker les personnages de l'utilisateur dans la campagne
-        $userTableIds = []; // Ajouté
+        $userCharacterIds = []; 
+        $userTableIds = []; 
     
         foreach ($tables as $table) {
             $tableCharacters = $tableModel->getCharactersByTableId($table['game_table_id']) ?? [];
             $characters[$table['game_table_id']] = $tableCharacters;
-            // Si l'utilisateur a des personnages dans la campagne
             foreach ($tableCharacters as $char) {
                 if ($char['id_user'] == $_SESSION['user']['id']) {
                     $userCharacterIds[] = $char['character_id'];
@@ -39,7 +38,6 @@ class ViewCampaign {
 
         }
     
-        // Récupérer les permissions de chaque article
         $articlePermissions = [];
         foreach ($articles as $article) {
             $articlePermissions[$article['article_id']] = $articleModel->getArticlePermissions($article['article_id']);

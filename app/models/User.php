@@ -42,7 +42,6 @@ class User {
     }
     
     public function updateUser($id, $pseudo, $email, $password = null) {
-        // Si un mot de passe est fourni, on le met à jour, sinon on l'ignore
         if ($password) {
             $stmt = $this->db->prepare("UPDATE users SET user_pseudo = ?, user_email = ?, user_password = ? WHERE user_id = ?");
             return $stmt->execute([$pseudo, $email, $password, $id]);
